@@ -1,12 +1,11 @@
 import scrapy
 
 
-class QuotesSpider(scrapy.Spider):
-    name = "hltv"
-
+class ExampleSpider(scrapy.Spider):
+    name = 'hltv'
     def start_requests(self):
         urls = [
-            'http://quotes.toscrape.com/page/1/',
+            'https://www.hltv.org/results',
             'http://quotes.toscrape.com/page/2/',
         ]
         for url in urls:
