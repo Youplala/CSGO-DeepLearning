@@ -9,7 +9,5 @@ class HLTVSpider(scrapy.Spider):
     ]
     def parse(self, response):
         yield {
-            'teams': response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "line-align", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "team", " " ))]/text()').getall(),
-            'score': response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "result-score", " " ))]//span/text()').getall(),
+            'match': response.css('a.a-reset::attr(href)').re(r'/matches.*'),
         }
-#\35 602 > div > div > div:nth-child(1) > a > div
