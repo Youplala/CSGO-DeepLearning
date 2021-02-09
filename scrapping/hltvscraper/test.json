@@ -1,8 +1,0 @@
-[
-{"team1": "Evil Geniuses", "team2": "G2", "score1": "0", "score2": "2", "date": "8th of February 2021", "map": [{"map1_name": "Inferno"}, {"map2_name": "Vertigo"}]},
-{"team1": "Paradox", "team2": "Animal Squad", "score1": "2", "score2": "0", "date": "3rd of February 2021", "map": [{"map1_name": "Train"}, {"map2_name": "Dust2"}]},
-{"team1": "Sprout", "team2": "GamerLegion", "score1": "2", "score2": "1", "date": "3rd of February 2021", "map": [{"map1_name": "Mirage"}, {"map2_name": "Nuke"}, {"map3_name": "Train"}]},
-{"team1": "Sinners", "team2": "HONORIS", "score1": "2", "score2": "1", "date": "3rd of February 2021", "map": [{"map1_name": "Train"}, {"map2_name": "Vertigo"}, {"map3_name": "Mirage"}]},
-{"team1": "EXTREMUM", "team2": "Izako Boars", "score1": "2", "score2": "1", "date": "3rd of February 2021", "map": [{"map1_name": "Vertigo"}, {"map2_name": "Train"}, {"map3_name": "Inferno"}]},
-{"team1": "Dignitas", "team2": "EC Kyiv", "score1": "2", "score2": "1", "date": "3rd of February 2021", "map": [{"map1_name": "Dust2"}, {"map2_name": "Overpass"}, {"map3_name": "Vertigo"}]},
-{"team1": "PACT", "team2": "GODSENT", "score1": "0", "score2": "2", "date": "3rd of February 2021", "map": [{"map1_name": "Dust2"}, {"map2_name": "Inferno"}]}
