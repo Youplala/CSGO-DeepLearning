@@ -6,7 +6,7 @@ import dateparser
 class MatchDetailSpider(scrapy.Spider):
     name = 'hltv_match_detail'
     start_urls = ['https://www.hltv.org/results&content=stats']
-    for i in range(1,5):
+    for i in range(1,200):
         start_urls.append('https://www.hltv.org/results?offset='+str(i*100)+'&content=stats')
 
     def parse(self, response):
