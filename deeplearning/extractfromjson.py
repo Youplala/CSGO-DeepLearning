@@ -19,8 +19,8 @@ for row in df.itertuples(index=False):
     for map in row.map:
         i = map['map_number']
         dict['map'+str(i)+'_name'] = map['map_name']
-        dict['map'+str(i)+'_score1'] = map['score1']
-        dict['map'+str(i)+'_score2'] = map['score2']
+        dict['map'+str(i)+'_score1'] = int(map['score1'])
+        dict['map'+str(i)+'_score2'] = int(map['score2'])
     df_maps.append(dict)
 
 maps = pd.DataFrame(df_maps)

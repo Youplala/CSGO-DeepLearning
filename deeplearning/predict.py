@@ -2,16 +2,13 @@ import json
 import pandas as pd
 import missingno as msno
 import numpy as np
-# Import DecisionTreeClassifier from sklearn.tree
-from sklearn.tree import DecisionTreeClassifier
-import extractfromjson
+import numpy as np
+from sklearn import preprocessing
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from tensorflow import keras
 
-# Instantiate a DecisionTreeClassifier 'dt' with a maximum depth of 6
-dt = DecisionTreeClassifier(max_depth=6, random_state=SEED)
-
-# Fit dt to the training set
-dt.fit(X_train, y_train)
-
-# Predict test set labels
-y_pred = dt.predict(X_test)
-print(y_pred[0:5])
+data = pd.read_csv('dataset/matches.csv')
+del data['players']
+data.shape
+data.dtypes

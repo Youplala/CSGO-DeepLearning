@@ -18,7 +18,7 @@ len(unique_teams)
 len(unique_teams2)
 elo = []
 dict = {'team': r}
-for row in sorted_df.itertuples():
+for row in sorted_df.itertuples():  
     elo.append()
 dict = {'id_match': row.id_match}
 for map in row.map:
