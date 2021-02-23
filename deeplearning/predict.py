@@ -46,30 +46,26 @@ print(accuracy*100,'%')
 #test_x = sc.transform(test_x)
 
 model = keras.Sequential([
-    keras.layers.Dense(1024, input_dim=train_x.shape[1], kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(512, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(512, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(512, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(256, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(256, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(256, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(128, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(1, kernel_initializer='normal', activation='linear'),
+    keras.layers.Dense(200, input_dim=train_x.shape[1], kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(150, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(100, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(50, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dropout(0.5),
+    keras.layers.Dense(1),
 ])
 model.compile(loss='mse', optimizer='adam', metrics=['mae', 'mape'])
-history = model.fit(train_x,train_y,epochs=50,validation_split=0.3, batch_size = 5000)
+history = model.fit(train_x,train_y,epochs=200,validation_split=0.2, batch_size = 64)
 prediction = model.predict(test_x)
 rounded = np.rint(prediction)
-
+score = model.evaluate(test_x,test_y)
+print(f'Test loss: {score[0]} / Test accuracy: {score[1]}')
 a = np.subtract(np.array(pd.DataFrame(test_y, columns=['actual'])), np.array(pd.DataFrame(rounded, columns=['pred'])))
 sns.displot(a)
 
-
-
-len([x for x in a if np.abs(x)<2]) / len(a) * 100
+len([x for x in a if np.abs(x)==0]) / len(a) * 100
 
 pred = pd.DataFrame(rounded, columns=['pred'])
-df = pd.merge(pd.DataFrame(test_y, columns=['true']), pred)
+#df = pd.merge(pd.DataFrame(test_y, columns=['true']), pred)
 
 print(pred)
 plt.title('Loss / Mean Squared Error')
@@ -85,4 +81,5 @@ plt.show()
 
 
 sns.displot(pd.DataFrame(prediction))
+plt.title('Distribution of the predicted difference of rounds')
 plt.show()
