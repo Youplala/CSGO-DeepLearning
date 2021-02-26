@@ -4,7 +4,6 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-import missingno as msno
 import numpy as np
 import tensorflow as tf
 from sklearn import preprocessing
@@ -14,7 +13,7 @@ from tensorflow import keras
 from sklearn.linear_model import LinearRegression
 
 # Read the csv file ignoring errors
-df = pd.read_csv('dataset/rounds.csv', error_bad_lines=False)
+df = pd.read_csv('/home/eliebrosset/github/CSGO-DeepLearning/deeplearning/dataset/rounds.csv', error_bad_lines=False)
 
 
 # Show the dataset shape and types of columns
@@ -40,8 +39,7 @@ y = df['map_score1'] - df['map_score2']
 
 # Select the useless columns and remove them
 useless_columns = [x+str(y) for x in ['team_player', 'player', 'kast'] for y in range(1,11)]
-useless_columns = ['id', 'score1', 'score2', 'map_score1', 'map_score2',
-'map_number','team1', 'team2', 'date','map_name'] + useless_columns
+useless_columns = ['id', 'score1', 'score2', 'map_score1', 'map_score2', 'map_number','team1', 'team2', 'date','map_name'] + useless_columns
 x = df.drop(useless_columns, axis=1)
 
 
@@ -60,6 +58,17 @@ lr = LinearRegression().fit(train_x, train_y)
 y_pred = lr.predict(test_x)
 accuracy = lr.score(test_x,test_y)
 print('Linear Regression accuracy: ', accuracy*100,'%')
+
+rounded = np.rint(y_pred)
+a = np.subtract(np.array(pd.DataFrame(test_y, columns=['actual'])), np.array(pd.DataFrame(rounded, columns=['pred'])))
+
+def accuracy(a, i):
+    acc = len([x for x in a if np.abs(x)<=i]) / len(a) * 100
+    return acc
+
+print('### Linear Regression Accuracy ###\n')
+for i in range(1,5):
+    print('Accuracy +-', i, 'rounds: ', accuracy(a, i))
 
 
 '''
@@ -87,7 +96,7 @@ optimizer  = 'adam'
 metrics    = ['mae', 'mape']
 epochs     = 150
 validation = 0.3
-batch      = 64
+batch      = 32
 
 
 # Compile and fit model
@@ -109,7 +118,7 @@ def accuracy(a, i):
     acc = len([x for x in a if np.abs(x)<=i]) / len(a) * 100
     return acc
 
-print('### Accuracy ###\n')
+print('### Deep Neural network Accuracy ###\n')
 for i in range(1,5):
     print('Accuracy +-', i, 'rounds: ', accuracy(a, i))
 
