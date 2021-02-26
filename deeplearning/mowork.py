@@ -3679,7 +3679,7 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "dominant-electric",
+   "id": "hazardous-ceiling",
    "metadata": {},
    "outputs": [
     {
@@ -3712,7 +3712,7 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "respiratory-times",
+   "id": "adaptive-suspect",
    "metadata": {},
    "outputs": [
     {
@@ -3744,7 +3744,7 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "juvenile-exercise",
+   "id": "selected-asian",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -3754,7 +3754,7 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "superb-quality",
+   "id": "appropriate-rouge",
    "metadata": {},
    "outputs": [
     {
@@ -3786,7 +3786,7 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "caring-asian",
+   "id": "sixth-study",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -3796,7 +3796,7 @@
   {
    "cell_type": "code",
    "execution_count": 28,
-   "id": "dedicated-christmas",
+   "id": "frank-cutting",
    "metadata": {},
    "outputs": [
     {
@@ -4820,7 +4820,7 @@
   {
    "cell_type": "code",
    "execution_count": 30,
-   "id": "weird-charlotte",
+   "id": "seasonal-repair",
    "metadata": {},
    "outputs": [
     {
@@ -4852,7 +4852,7 @@
   {
    "cell_type": "code",
    "execution_count": 31,
-   "id": "discrete-palestine",
+   "id": "sticky-ministry",
    "metadata": {},
    "outputs": [
     {
@@ -5224,7 +5224,7 @@
   {
    "cell_type": "code",
    "execution_count": 33,
-   "id": "identified-singapore",
+   "id": "finnish-oxford",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5234,7 +5234,7 @@
   {
    "cell_type": "code",
    "execution_count": 41,
-   "id": "jewish-peeing",
+   "id": "modular-azerbaijan",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5245,7 +5245,7 @@
   {
    "cell_type": "code",
    "execution_count": 42,
-   "id": "figured-talent",
+   "id": "alike-ordinance",
    "metadata": {},
    "outputs": [
     {
@@ -5617,7 +5617,7 @@
   {
    "cell_type": "code",
    "execution_count": 43,
-   "id": "elect-strand",
+   "id": "modified-pennsylvania",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5627,7 +5627,7 @@
   {
    "cell_type": "code",
    "execution_count": 44,
-   "id": "successful-julian",
+   "id": "lovely-washington",
    "metadata": {},
    "outputs": [
     {
@@ -6648,7 +6648,7 @@
   {
    "cell_type": "code",
    "execution_count": 48,
-   "id": "operational-falls",
+   "id": "resistant-volume",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -6662,27 +6662,29 @@
   {
    "cell_type": "code",
    "execution_count": 65,
-   "id": "designed-driver",
+   "id": "judicial-montreal",
    "metadata": {},
    "outputs": [],
    "source": [
+    "teamsid.append(21000)\n",
     "teamsid.append(21020)"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 66,
-   "id": "sorted-tablet",
+   "id": "binding-terry",
    "metadata": {},
    "outputs": [],
    "source": [
+    "teamnames.append('DOG77')\n",
     "teamnames.append('FcottoNd')"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 67,
-   "id": "banner-metabolism",
+   "id": "patent-anniversary",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -6692,7 +6694,7 @@
   {
    "cell_type": "code",
    "execution_count": 68,
-   "id": "cultural-baseball",
+   "id": "thick-brain",
    "metadata": {},
    "outputs": [
     {
@@ -7064,7 +7066,7 @@
   {
    "cell_type": "code",
    "execution_count": 69,
-   "id": "horizontal-uniform",
+   "id": "breeding-shark",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -7074,7 +7076,7 @@
   {
    "cell_type": "code",
    "execution_count": 70,
-   "id": "suspected-clinton",
+   "id": "serious-bibliography",
    "metadata": {},
    "outputs": [
     {
@@ -7446,7 +7448,7 @@
   {
    "cell_type": "code",
    "execution_count": 55,
-   "id": "whole-protein",
+   "id": "pretty-spring",
    "metadata": {},
    "outputs": [
     {
@@ -7465,7 +7467,7 @@
   {
    "cell_type": "code",
    "execution_count": 62,
-   "id": "complimentary-armor",
+   "id": "catholic-state",
    "metadata": {},
    "outputs": [
     {
@@ -15320,7 +15322,7 @@
   {
    "cell_type": "code",
    "execution_count": 57,
-   "id": "neither-hughes",
+   "id": "warming-plaza",
    "metadata": {},
    "outputs": [
     {
@@ -15692,7 +15694,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "thorough-parish",
+   "id": "roman-things",
    "metadata": {},
    "outputs": [],
    "source": []
