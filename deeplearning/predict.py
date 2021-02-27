@@ -13,7 +13,7 @@ from tensorflow import keras
 from sklearn.linear_model import LinearRegression
 
 # Read the csv file ignoring errors
-df = pd.read_csv('/home/eliebrosset/github/CSGO-DeepLearning/deeplearning/dataset/rounds.csv', error_bad_lines=False)
+df = pd.read_csv('dataset/rounds.csv', error_bad_lines=False)
 
 
 # Show the dataset shape and types of columns
@@ -49,8 +49,15 @@ print('New shape: ', x.shape)
 x.head(10)
 
 
+
+
+a = pd.read_csv('dataset/new.csv')
+new = a.drop(['team1', 'team2'], axis=1)
+new.dtypes
+new.isnull().any()
+df = df.fillna(method='ffill')
 # Separate data into test and train
-train_x, test_x, train_y, test_y = train_test_split(x, y, test_size = 0.2, random_state=7)
+train_x, test_x, train_y, test_y = train_test_split(new, y, test_size = 0.2, random_state=7)
 
 
 # Trying out a simple Linear Regression

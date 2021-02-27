@@ -93,3 +93,4 @@ teamnames.append('DOG77')
 x['team1']=x['team1'].replace(teamnames,teamsid)
 x['team2']=x['team2'].replace(teamnames,teamsid)
 
+x.to_csv('dataset/new.csv', index=False)
