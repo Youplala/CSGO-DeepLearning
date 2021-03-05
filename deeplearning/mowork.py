@@ -91,4 +91,8 @@ teamnames.append('FcottoNd')
 teamnames.append('DOG77')
 x['team1']=x['team1'].replace(teamnames,teamsid)
 x['team2']=x['team2'].replace(teamnames,teamsid)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 484200ec0baf6f8963d5e165561746662908534e
 x.to_csv('dataset/new.csv', index=False)
