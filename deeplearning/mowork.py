@@ -2,7 +2,6 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-import missingno as msno
 import numpy as np
 df = pd.read_csv('dataset/rounds.csv', error_bad_lines=False)
 
@@ -92,4 +91,4 @@ teamnames.append('FcottoNd')
 teamnames.append('DOG77')
 x['team1']=x['team1'].replace(teamnames,teamsid)
 x['team2']=x['team2'].replace(teamnames,teamsid)
-
+x.to_csv('dataset/new.csv', index=False)
