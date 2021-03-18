@@ -51,13 +51,34 @@ x.head(10)
 
 
 
-a = pd.read_csv('dataset/new.csv')
-new = a.drop(['team1', 'team2'], axis=1)
+new = pd.read_csv('dataset/newdataset2.csv')
+#new = a.drop(['team1', 'team2'], axis=1)
+
+
+
+unique = new["map_score1"].unique()
+print(np.sort(unique)) # We see '-' so we replace it by 0
+df["map_score1"] = df["map_score1"].replace(['-'],'0').astype(str).astype(int)
+df["map_score2"] = df["map_score2"].replace(['-'],'0').astype(str).astype(int)
+
+
+# Extract the difference of scores into y
+y = new['map_score1'] - new['map_score2']
+
+y
+# Select the useless columns and remove them
+#useless_columns = [x+str(y) for x in ['team_player', 'player', 'kast'] for y in range(1,11)]
+useless_columns = []
+useless_columns = ['map_score1', 'map_score2','team1', 'team2'] + useless_columns
+x = new.drop(useless_columns, axis=1)
+
+x
 new.dtypes
-new.isnull().any()
+x.isnull().any()
+new
 df = df.fillna(method='ffill')
 # Separate data into test and train
-train_x, test_x, train_y, test_y = train_test_split(new, y, test_size = 0.2, random_state=7)
+train_x, test_x, train_y, test_y = train_test_split(x, y, test_size = 0.2, random_state=7)
 
 
 # Trying out a simple Linear Regression
@@ -88,11 +109,12 @@ test_x = sc.transform(test_x)
 
 # Instanciate Deep Learning Keras model
 model = keras.Sequential([
-    keras.layers.Dense(200, input_dim=train_x.shape[1], kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(150, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(100, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(50, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dropout(0.5, noise_shape=None, seed=None),
+    keras.layers.Dense(512, input_dim=train_x.shape[1], kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(256, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(128, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(64, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dense(32, kernel_initializer='normal', activation='relu'),
+    keras.layers.Dropout(0.5, noise_shape=None, seed=7),
     keras.layers.Dense(1),
 ])
 
@@ -101,9 +123,9 @@ model = keras.Sequential([
 loss       = 'mse'
 optimizer  = 'adam'
 metrics    = ['mae', 'mape']
-epochs     = 150
+epochs     = 100
 validation = 0.3
-batch      = 32
+batch      = 64
 
 
 # Compile and fit model
@@ -132,7 +154,7 @@ for i in range(1,5):
 
 # Plot predicition distribution
 preds = pd.DataFrame(rounded, columns=['preds'])
-sns.displot(preds)
+sns.displot(prediction)
 plt.title('Distribution of the predicted difference of rounds')
 plt.show()
 
