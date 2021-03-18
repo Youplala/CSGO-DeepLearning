@@ -49,6 +49,9 @@ print('New shape: ', x.shape)
 x.head(10)
 
 
+<<<<<<< HEAD
+a = pd.read_csv('/home/eliebrosset/github/CSGO-DeepLearning/deeplearning/dataset/new.csv')
+=======
 
 
 new = pd.read_csv('dataset/newdataset2.csv')
@@ -77,6 +80,7 @@ new.dtypes
 x.isnull().any()
 new
 df = df.fillna(method='ffill')
+>>>>>>> 484200ec0baf6f8963d5e165561746662908534e
 # Separate data into test and train
 train_x, test_x, train_y, test_y = train_test_split(x, y, test_size = 0.2, random_state=7)
 
@@ -153,8 +157,13 @@ for i in range(1,5):
 
 
 # Plot predicition distribution
+<<<<<<< HEAD
 preds = pd.DataFrame(rounded, columns=['preds'])
 sns.displot(prediction)
+=======
+preds = pd.DataFrame(prediction, columns=['preds'])
+sns.displot(preds)
+>>>>>>> 3ce73cfb151e2b2a4f72d4197b4858a9be3963d0
 plt.title('Distribution of the predicted difference of rounds')
 plt.show()
 
