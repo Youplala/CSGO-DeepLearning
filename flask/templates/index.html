@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href='../static/main.css' />
+    <script src="../js/script.js"></script>
     <title>CS:GO Predictor</title>
   </head>
   <body>
@@ -16,13 +17,22 @@
         <div class="card">
           pick team 1
         </div>
+        <div class="">
+          <p>2 - 16</p>
+        </div>
         <div class="card">
           pick team 2
         </div>
 
       </div>
+
+      <form method="post" action="/" class="predict_btn">
+        <input type="submit" value="Predict" name="predict"/>
+      </form>
+
+
       <div class="teams">
-        <div class="team">
+        <div class="team" onclick="display()">
           <a href="">
           <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
           <p>Vitality</p>

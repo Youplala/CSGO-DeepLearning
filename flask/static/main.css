@@ -18,7 +18,7 @@ body{
   width:35%;
   left: 0px;
   top: 0px;
-  background-color: blue;
+  border-right: 1px solid lightgrey;
 }
 .right{
   position: absolute;
@@ -26,7 +26,7 @@ body{
   width:35%;
   right: 0px;
   top: 0px;
-  background-color: blue;
+  border-left: 1px solid lightgrey;
 }
 .center{
   position: absolute;
@@ -69,19 +69,37 @@ body{
 .team{
   width: 100px;
 }
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 .team img{
   max-width: 60px;
   max-height: 60px;
 }
 .team a{
-text-decoration: none;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .team a p{
   color: lightgrey;
   text-align: center;
+}
+
+.predict_btn{
+  background-color: #7C87E1;
+  border-radius: 60px;
+  width: auto;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right:30px;
+  color: white;
 }
