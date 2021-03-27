@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    data = [1,2,3,4,5,6,7,8,9,10]
     print(request.method)
     if "predict" in request.form:
         print("Prediction works")
@@ -11,7 +12,7 @@ def home():
     else:
         return render_template("index.html")
 
-    return render_template("index.html")
+    return render_template("test.html", data=data)
 
 if __name__ == '__main__':
     app.debug = True

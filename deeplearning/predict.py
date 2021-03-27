@@ -109,12 +109,13 @@ test_x = sc.transform(test_x)
 
 # Instanciate Deep Learning Keras model
 model = keras.Sequential([
-    keras.layers.Dense(512, input_dim=train_x.shape[1], kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(256, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(128, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(64, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dense(32, kernel_initializer='normal', activation='relu'),
-    keras.layers.Dropout(0.5, noise_shape=None, seed=7),
+    keras.layers.Dense(512, input_dim=train_x.shape[1], activation='relu'),
+    keras.layers.Dropout(0.5, seed=7),
+    keras.layers.Dense(256, activation='relu'),
+    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dense(64, activation='relu'),
+    keras.layers.Dense(32, activation='relu'),
+    keras.layers.Dropout(0.5, seed=7),
     keras.layers.Dense(1),
 ])
 
@@ -122,7 +123,7 @@ model = keras.Sequential([
 # Parameters
 loss       = 'mse'
 optimizer  = 'adam'
-metrics    = ['mae', 'mape']
+metrics    = ['mae']
 epochs     = 100
 validation = 0.3
 batch      = 64
