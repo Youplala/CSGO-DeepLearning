@@ -54,7 +54,8 @@ body{
   margin: 50px;
 }
 .card{
-  background-color: white;
+  background-color: #393939;
+  color: white;
   border-radius: 5px;
   min-height: 130px;
   width: 120px;
@@ -63,14 +64,15 @@ body{
   text-align: center;
 }
 .teams{
-
   margin-top: 50px;
   border-radius: 15px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-color: #393939;
@@ -81,6 +83,8 @@ body{
 .team{
   width: 100px;
   padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
