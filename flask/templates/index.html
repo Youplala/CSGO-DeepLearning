@@ -3,37 +3,36 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href='../static/main.css' />
-    <script type="text/javascript">alert("Hello World!");</script>
+
     <title>CS:GO Predictor</title>
   </head>
   <body>
 
+
+
  <div class="main">
 
     <div class="left">
-       salut
+       <div class="center-top">
+         <p>salut</p>
+         <p>jtm</p>
+       </div>
     </div>
     <div class="center">
 
       <div class="pick">
-        <div class="card">
-          <div class="team">
-            <a href="">
-            <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-            <p>blabla</p>
-            </a>
+        <div class="card" id="team1_selected">
+          <p id="select_team1_text">Select team 1 below</p>
+          <div class="team" id="selected1" style="display:none;">
+            <img id="logo1" src="" alt="">
+            <p id="team1Name">Vitality</p>
           </div>
         </div>
         <div class="">
           <p>2 - 16</p>
         </div>
-        <div class="card">
-          <div class="team">
-            <a href="">
-            <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-            <p>fjdkhwa fidhfdsfsdf</p>
-            </a>
-          </div>
+        <div class="card" id="team2_selected">
+          <p>Select team 2 below</p>
         </div>
 
       </div>
@@ -45,65 +44,13 @@
 
       <div class="teams">
 
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div><div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
-        <div class="team" onclick="display()">
-          <a href="">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=200&s=0817a9bbab2476869f9a3b09d51c0f62" alt="">
-          <p id="test">Vitality</p>
-          </a>
-        </div>
+        {% for key,team in data.iterrows() %}
+          <div class="team" onclick="select_team(this)">
+            <img src="{{ team['logos'] }}" alt="">
+              <p> {{ team['team'] }} </p>
+          </div>
+        {% endfor %}
+
 
 
       </div>
@@ -111,6 +58,26 @@
     <div class="right">
     </div>
  </div>
+
+
+ <script type="text/javascript">
+
+ function select_team(team){
+     team.style.border = "2px solid #6E509F";
+     var childs = team.childNodes;
+     var logo = childs[1].src;
+     var team1Name = team.getElementsByTagName('p')[0].innerHTML;
+     var team1_container = document.getElementById('selected1');
+     var select_team1_text = document.getElementById('select_team1_text');
+     select_team1_text.style.display = "none";
+     document.getElementById('logo1').src = logo;
+     document.getElementById('team1Name').textContent = team1Name;
+     team1_container.style.display="block";
+ }
+
+
+
+ </script>
  </body>
 
 </html>
