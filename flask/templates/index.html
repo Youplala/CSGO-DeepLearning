@@ -30,15 +30,22 @@
         </div>
         <div class="">
           <p>2 - 16</p>
+          <a href="">Reset</a>
         </div>
         <div class="card" id="team2_selected">
-          <p>Select team 2 below</p>
+          <p id="select_team2_text">Select team 2 below</p>
+          <div class="team" id="selected2" style="display:none;">
+            <img id="logo2" src="" alt="">
+            <p id="team2Name">Vitality</p>
+          </div>
         </div>
 
       </div>
 
       <form method="post" action="/" class="predict_btn">
         <input type="submit" value="Predict" name="predict"/>
+        <input type="text" name="fdgagdas" value="faeafe" hidden>
+        <input type="text" name="fdgagdas" value="faeafe" hidden>
       </form>
 
 
@@ -66,13 +73,23 @@
      team.style.border = "2px solid #6E509F";
      var childs = team.childNodes;
      var logo = childs[1].src;
-     var team1Name = team.getElementsByTagName('p')[0].innerHTML;
-     var team1_container = document.getElementById('selected1');
-     var select_team1_text = document.getElementById('select_team1_text');
-     select_team1_text.style.display = "none";
-     document.getElementById('logo1').src = logo;
-     document.getElementById('team1Name').textContent = team1Name;
-     team1_container.style.display="block";
+     var teamName = team.getElementsByTagName('p')[0].innerHTML;
+     var team_container1 = document.getElementById('selected1');
+     var team_container2 = document.getElementById('selected2');
+     if (team_container1.style.display == "none"){
+       var select_team1_text = document.getElementById('select_team1_text');
+       select_team1_text.style.display = "none";
+       document.getElementById('logo1').src = logo;
+       document.getElementById('team1Name').textContent = teamName;
+       team_container1.style.display="block";
+     }else{
+       var select_team2_text = document.getElementById('select_team2_text');
+       select_team2_text.style.display = "none";
+       document.getElementById('logo2').src = logo;
+       document.getElementById('team2Name').textContent = teamName;
+       team_container2.style.display="block";
+     }
+
  }
 
 

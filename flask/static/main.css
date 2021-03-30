@@ -63,7 +63,7 @@ body{
   text-align: center;
 }
 .teams{
-  background-color: white;
+
   margin-top: 50px;
   border-radius: 15px;
   width: 80%;
@@ -73,6 +73,7 @@ body{
   padding: 10px;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #393939;
 }
 .card .team p{
   word-wrap: normal;
@@ -88,26 +89,31 @@ body{
   text-align: center;
 }
 button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+  background: none;
+  border: none;
 }
 .team img{
   max-width: 60px;
   max-height: 60px;
-  position: relative !important;
-  left: 19%;
+  left: 1%;
+  top: 10%;
 }
 
 .team p{
   color: lightgrey;
   text-align: center;
+  position: relative;
+  left: 0%;
+  top: 5%;
 }
-
+.form{
+  margin: 0px;
+  width: 100%;
+}
 .predict_btn{
   background-color: #7C87E1;
   border-radius: 60px;
@@ -115,5 +121,4 @@ button, input[type="submit"], input[type="reset"] {
   padding: 10px;
   padding-left: 30px;
   padding-right:30px;
-  color: white;
 }
