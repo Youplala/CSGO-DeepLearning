@@ -1,0 +1,46 @@
+
+div.side_container{
+
+  border-radius: 25px;
+  width: 90%;
+  margin: 30px;
+  background-color: #424242;
+}
+
+h4.team_name{
+  color: #FFFFFF;
+  background-color: #424242;
+}
+
+.team_pick{
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+}
+
+span.rank{
+  font-size: 10px;
+}
+
+div.graph_container{
+  margin-bottom: 10px;
+  background-color: #424242;
+}
+
+table{
+  color: white;
+  background-color: #424242;
+}
+.col-sm-12{
+  background-color: #424242;
+}
+
+thead{
+  font-size: 16px;
+  font-weight: bold;
+  color: #845EC2;
+  border-style: solid;
+}
+tr, td{
+  background-color: #424242;
+}
