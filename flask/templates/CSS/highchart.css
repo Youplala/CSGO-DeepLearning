@@ -1,0 +1,55 @@
+ @import 'https://code.highcharts.com/css/highcharts.css';
+
+#graph_content_l, #graph_content_r{
+  height: 300px;
+}
+
+
+/* Link the series colors to axis colors */
+.highcharts-background {
+  fill: #393939;
+  }
+
+.highcharts-title {
+  fill: #845EC2;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.highcharts-axis-title {
+  fill: #FFFFFF;
+}
+
+.highcharts-axis-labels {
+  fill: #FFFFFF;
+  cursor: default;
+  font-size: 0.9em;
+}
+
+.highcharts-credits {
+  font-size: 0em;
+}
+
+.highcharts-credits:hover {
+  font-size: 0em;
+}
+
+.highcharts-area {
+  fill: #845EC2;
+  fill-opacity: 0.5;
+  stroke-width: 0;
+}
+
+.highcharts-point {
+  fill : white;
+  stroke-width: 1px;
+}
+
+.highcharts-point-hover {
+  fill : #845EC2;
+  fill-opacity: 0.75;
+  transition: fill-opacity 50ms;}
+
+}
+

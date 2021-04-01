@@ -1,0 +1,43 @@
+body {
+  margin: 40px;
+  background: #393939
+  }
+
+div.side_container{
+  border-style: solid;
+  border-color: #845EC2;
+  border-radius: 25px;
+}
+
+h4.team_name{
+  color: #FFFFFF
+}
+
+.team_pick{
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+}
+
+span.rank{
+  font-size: 10px;
+}
+
+div.graph_container{
+  margin-bottom: 10px;
+  border-color: white;
+  border-style: solid;
+  border-radius: 25px;
+}
+
+table{
+  color: white;
+}
+
+
+thead{
+  font-size: 16px;
+  font-weight: bold;
+  color: #845EC2;
+  border-style: solid;
+}
