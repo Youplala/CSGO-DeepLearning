@@ -65,11 +65,12 @@
 
         // Create the chart
         Highcharts.chart('graph_content_l', {
+          exporting: { enabled: false },
             chart: {
               styledMode: true,
               type: 'area',},
             title: {
-              text: 'Vitality Team Ranking',
+              text: 'Team Ranking',
               },
             yAxis: {
               title:{
@@ -96,11 +97,12 @@
 
         // Create the chart
         Highcharts.chart('graph_content_r', {
+          exporting: { enabled: false },
             chart: {
               styledMode: true,
               type: 'area',},
             title: {
-              text: 'Astralis Team Ranking',
+              text: 'Team Ranking',
               },
             yAxis: {
               title:{
@@ -132,10 +134,12 @@
  <div class="main">
 
     <div class="left">
-      <div class="row text-center">
+      <div class="row">
         <div class="col-sm-3 side_container">
-          <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=100&s=ddc5952ae492cbefb10fbe64471486b5" class = "team_pick" alt="Team Logo">
-          <h4 class="team_name">Team Name</h4>
+          <div class="team_header1">
+            <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=100&s=ddc5952ae492cbefb10fbe64471486b5" class = "team_pick" alt="Team Logo">
+            <h4 class="team_name" style="margin-left:50px;">Team Name</h4>
+          </div>
           <div class="col-sm-12 graph_container">
             <div id="graph_content_l"></div>
           </div>
@@ -175,7 +179,7 @@
     </div>
   </div>
     <div class="center">
-      <img src="static/logo.png" alt="" style="">
+      <img src="static/logo3.png" alt="" style="">
       <div class="pick">
         <div class="card" id="team1_selected">
           <p id="select_team1_text">Select team 1 below</p>
@@ -214,11 +218,49 @@
           </div>
         {% endfor %}
 
-
-
       </div>
     </div>
     <div class="right">
+
+      <div class="col-sm-3 side_container">
+        <div class="team_header2">
+         <img src="https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b20675" class = "team_pick" alt="...">
+         <h4 class="team_name" style="margin-right:50px;">Team Name</h4>
+       </div>
+      <div class="col-sm-12 graph_container">
+       <div id="graph_content_r"></div>
+       </div>
+      <div class="col-sm-12">
+       <table class="table table-bordered">
+         <thead>
+            <tr>
+             <td colspan="2">Team Statistics</td>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>Average Kills</td>
+             <td>X</td>
+           </tr>
+           <tr>
+             <td>Average Death</td>
+             <td>X</td>
+           </tr>
+           <tr>
+             <td>Average Dammage</td>
+             <td>X</td>
+           </tr>
+           <tr>
+             <td>Assistance Percentage</td>
+             <td>X</td>
+           </tr>
+           <tr>
+             <td>Rating</td>
+             <td>X</td>
+           </tr>
+         </tbody>
+     </table>
+     </div>
     </div>
  </div>
 
