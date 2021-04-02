@@ -135,10 +135,10 @@
 
     <div class="left">
       <div class="row">
-        <div class="col-sm-3 side_container">
+        <div id="left-team" class="col-sm-3 side_container" style="display:none;">
           <div class="team_header1">
-            <img src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=100&s=ddc5952ae492cbefb10fbe64471486b5" class = "team_pick" alt="Team Logo">
-            <h4 class="team_name" style="margin-left:50px;">Team Name</h4>
+            <img id="team_logo_left" src="https://img-cdn.hltv.org/teamlogo/GAlByJtDTnkgbb9p_71SUL.png?ixlib=java-2.1.0&w=100&s=ddc5952ae492cbefb10fbe64471486b5" class = "team_pick" alt="Team Logo">
+            <h4 id="team_name_left" class="team_name" style="margin-left:50px;">Team Name</h4>
           </div>
           <div class="col-sm-12 graph_container">
             <div id="graph_content_l"></div>
@@ -222,10 +222,10 @@
     </div>
     <div class="right">
 
-      <div class="col-sm-3 side_container">
+      <div id="right-team" class="col-sm-3 side_container" style="display:none;">
         <div class="team_header2">
-         <img src="https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b20675" class = "team_pick" alt="...">
-         <h4 class="team_name" style="margin-right:50px;">Team Name</h4>
+         <img id="team_logo_right" src="https://img-cdn.hltv.org/teamlogo/9bgXHp-oh1oaXr7F0mTGmd.svg?ixlib=java-2.1.0&s=f567161ab183001be33948b98c4b20675" class = "team_pick" alt="...">
+         <h4 id="team_name_right" class="team_name" style="margin-right:50px;">Team Name</h4>
        </div>
       <div class="col-sm-12 graph_container">
        <div id="graph_content_r"></div>
@@ -298,6 +298,9 @@ if(document.getElementById('selectedBool').textContent === "true"){
        document.getElementById('team1Name').textContent = teamName;
        team_container1.style.display="block";
        document.getElementById("team1input").value = teamName;
+       document.getElementById('team_logo_left').src = logo;
+       document.getElementById('team_name_left').textContent = teamName;
+       document.getElementById('left-team').style.display="block";
      }else{
        var select_team2_text = document.getElementById('select_team2_text');
        select_team2_text.style.display = "none";
@@ -305,6 +308,9 @@ if(document.getElementById('selectedBool').textContent === "true"){
        document.getElementById('team2Name').textContent = teamName;
        team_container2.style.display="block";
        document.getElementById("team2input").value = teamName;
+       document.getElementById('team_logo_right').src = logo;
+       document.getElementById('team_name_right').textContent = teamName;
+       document.getElementById('right-team').style.display="block";
      }
 
 
