@@ -2,6 +2,8 @@
 
 CSGO Predictor is a Dashboard where you can predict victories in pro Counter Strike matches using Deep Learning Algorithms.
 
+It is not reproducible yet but I hope someday it will.
+
 
 ## Contributing
 

@@ -49,9 +49,9 @@ print('New shape: ', x.shape)
 x.head(10)
 
 
+'''
 
-
-new = pd.read_csv('dataset/newdataset2.csv')
+#new = pd.read_csv('dataset/newdataset2.csv')
 #new = a.drop(['team1', 'team2'], axis=1)
 
 
@@ -76,7 +76,10 @@ x
 new.dtypes
 x.isnull().any()
 new
-df = df.fillna(method='ffill')
+
+'''
+
+#df = df.fillna(method='ffill')
 # Separate data into test and train
 train_x, test_x, train_y, test_y = train_test_split(x, y, test_size = 0.2, random_state=7)
 
@@ -124,9 +127,9 @@ model = keras.Sequential([
 loss       = 'mse'
 optimizer  = 'adam'
 metrics    = ['mae']
-epochs     = 100
+epochs     = 60
 validation = 0.3
-batch      = 64
+batch      = 32
 
 
 # Compile and fit model
@@ -140,6 +143,7 @@ rounded = np.rint(prediction)
 score = model.evaluate(test_x,test_y)
 print(f'Test loss: {score[0]} / Test accuracy: {score[1]}')
 
+model.save('model')
 
 # Compute difference between prediction true value and prediction
 a = np.subtract(np.array(pd.DataFrame(test_y, columns=['actual'])), np.array(pd.DataFrame(rounded, columns=['pred'])))
@@ -154,13 +158,8 @@ for i in range(1,5):
 
 
 # Plot predicition distribution
-<<<<<<< HEAD
 preds = pd.DataFrame(rounded, columns=['preds'])
 sns.displot(prediction)
-=======
-preds = pd.DataFrame(prediction, columns=['preds'])
-sns.displot(preds)
->>>>>>> 3ce73cfb151e2b2a4f72d4197b4858a9be3963d0
 plt.title('Distribution of the predicted difference of rounds')
 plt.show()
 

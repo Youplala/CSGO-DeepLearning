@@ -21,8 +21,8 @@
 
        <script>
 
-      Highcharts.getJSON('https://demo-live-data.highcharts.com/', function () {
-             var data =
+
+var data =
         [
           //[date,TimeStamp,Correct_TimeStamp,Rank_Astralis,Rank_Big,Rank_Complexity,Rank_EG,Rank_Fnatic,Rank_G2,Rank_Gambit,Rank_Heroic,Rank_Liquid,Rank_Mouses,Rank_NAVI,Rank_OG,Rank_Spirit,rank_Virtus_pro,Rank_Vitality],
           [12_2_2019,1575244800,1575244800000,1,26,44,2,4,15,32,17,3,9,14,,29,11,7],
@@ -43,23 +43,44 @@
           [3_1_2021,1614556800,1614556800000,1,7,11,13,16,10,4,14,6,15,2,17,8,3,5]
         ]
 
-        var graph_left = [],
+        const teamList = ["Astralis","BIG","Complexity","EvilGeniuses","fnatic","G2","Gambit","Heroic","Liquid","mousesports","NatusVincere","OG","Spirit","Virtus.pro","Vitality"]
+        var teamStatsList = [
+          ['Astralis', 40.44, 36.32, 77.09, 73.07, 1.15],
+          ['BIG', 41.66, 40.46, 74.67, 70.0, 1.08],
+          ['Complexity', 41.73, 40.35, 74.37, 70.88, 1.08],
+          ['Evil Geniuses', 44.37, 43.64, 74.18, 71.66, 1.08],
+          ['fnatic', 43.75, 43.62, 74.39, 69.28, 1.05],
+          ['G2', 42.85, 41.85, 73.97, 70.02, 1.06],
+          ['Gambit', 40.97, 37.43, 75.13, 72.34, 1.11],
+          ['Heroic', 44.24, 42.35, 74.65, 71.09, 1.08],
+          ['Liquid', 41.42, 38.68, 75.86, 72.26, 1.12],
+          ['mousesports', 41.05, 39.56, 74.11, 70.2, 1.07],
+          ['Natus Vincere', 42.08, 39.4, 74.89, 71.4, 1.1],
+          ['OG', 44.64, 43.3, 73.16, 71.53, 1.07],
+          ['Spirit', 40.33, 38.41, 74.18, 71.4, 1.09],
+          ['Virtus.pro', 39.41, 39.21, 72.49, 69.19, 1.04],
+          ['Vitality', 42.14, 40.17, 75.54, 71.5, 1.1]
+        ]
+
+     function insertLeft(teamName){
+      
+      const isTeam = (element) => element === teamName;
+      teamName = teamName.replace(/\s/g, '');
+      var index = teamList.findIndex(isTeam);
+
+      document.getElementById('kills-left').textContent = teamStatsList[index][1];
+      document.getElementById('deaths-left').textContent = teamStatsList[index][2];
+      document.getElementById('adr-left').textContent = teamStatsList[index][3];
+      document.getElementById('kda-left').textContent = teamStatsList[index][4];
+      document.getElementById('rating-left').textContent = teamStatsList[index][5];
+
+      var graph_left = [],
         dataLength = data.length,
         i = 0;
         for (i; i < dataLength; i += 1) {
           graph_left.push([
             data[i][2], // the date
-            data[i][17] // the volume
-          ]);
-        }
-
-        var graph_right = [],
-        dataLength = data.length,
-        i = 0;
-        for (i; i < dataLength; i += 1) {
-          graph_right.push([
-            data[i][2], // the date
-            data[i][3], // the volume
+            data[i][index+3], // the volume
           ]);
         }
 
@@ -93,7 +114,28 @@
               data: graph_left,
               threshold: null,}],
         });
+     }
 
+     function insertRight(teamName){
+      const isTeam = (element) => element === teamName;
+      teamName = teamName.replace(/\s/g, '');
+      var index = teamList.findIndex(isTeam);
+
+      document.getElementById('kills-right').textContent = teamStatsList[index][1];
+      document.getElementById('deaths-right').textContent = teamStatsList[index][2];
+      document.getElementById('adr-right').textContent = teamStatsList[index][3];
+      document.getElementById('kda-right').textContent = teamStatsList[index][4];
+      document.getElementById('rating-right').textContent = teamStatsList[index][5];
+
+      var graph_right = [],
+        dataLength = data.length,
+        i = 0;
+        for (i; i < dataLength; i += 1) {
+          graph_right.push([
+            data[i][2], // the date
+            data[i][index+3], // the volume
+          ]);
+        }
 
         // Create the chart
         Highcharts.chart('graph_content_r', {
@@ -115,6 +157,9 @@
               title: {
                 text: 'Date',},
                 type: 'datetime',},
+                plotOptions: {
+                    borderWidth: 0 // < set this option
+                  },
 
             series: [{
               showInLegend: false,
@@ -122,7 +167,8 @@
               data: graph_right,
               threshold: null,}],
         });
-     });
+     }
+     
     </script>
 
 
@@ -153,23 +199,23 @@
               <tbody>
                 <tr>
                   <td>Average Kills</td>
-                  <td>X</td>
+                  <td><p id="kills-left"></p></td>
                 </tr>
                 <tr>
                   <td>Average Death</td>
-                  <td>X</td>
+                  <td><p id="deaths-left"></p></td>
                 </tr>
                 <tr>
-                  <td>Average Dammage</td>
-                  <td>X</td>
+                  <td>Average Damage</td>
+                  <td><p id="adr-left"></p></td>
                 </tr>
                 <tr>
                   <td>Assistance Percentage</td>
-                  <td>X</td>
+                  <td><p id="kda-left"></p></td>
                 </tr>
                 <tr>
                   <td>Rating</td>
-                  <td>X</td>
+                  <td><p id="rating-left"></p></td>
                 </tr>
               </tbody>
             </table>
@@ -189,7 +235,8 @@
           </div>
         </div>
         <div class="score">
-          <p style="font-size:50px;">2 - 16</p>
+          <p>Predicted round difference: <span>{{ prediction }}</span></p>
+          <p style="font-size:50px;text-align:center;">{{score1}} - {{score2}}</p>
           <a href="">Reset</a>
         </div>
         <div class="card" id="team2_selected">
@@ -238,27 +285,27 @@
            </tr>
          </thead>
          <tbody>
-           <tr>
-             <td>Average Kills</td>
-             <td>X</td>
-           </tr>
-           <tr>
-             <td>Average Death</td>
-             <td>X</td>
-           </tr>
-           <tr>
-             <td>Average Dammage</td>
-             <td>X</td>
-           </tr>
-           <tr>
-             <td>Assistance Percentage</td>
-             <td>X</td>
-           </tr>
-           <tr>
-             <td>Rating</td>
-             <td>X</td>
-           </tr>
-         </tbody>
+                <tr>
+                  <td>Average Kills</td>
+                  <td><p id="kills-right"></p></td>
+                </tr>
+                <tr>
+                  <td>Average Death</td>
+                  <td><p id="deaths-right"></p></td>
+                </tr>
+                <tr>
+                  <td>Average Damage</td>
+                  <td><p id="adr-right"></p></td>
+                </tr>
+                <tr>
+                  <td>Assistance Percentage</td>
+                  <td><p id="kda-right"></p></td>
+                </tr>
+                <tr>
+                  <td>Rating</td>
+                  <td><p id="rating-right"></p></td>
+                </tr>
+              </tbody>
      </table>
      </div>
     </div>
@@ -282,7 +329,18 @@ if(document.getElementById('selectedBool').textContent === "true"){
   document.getElementById('team2Name').textContent = team2Name;
   team_container2.style.display="block";
   document.getElementById("team2input").value = team2Name;
+  /*document.getElementById('team_logo_left').src = logo;*/
+  document.getElementById('team_name_left').textContent = team1Name;
+  document.getElementById('left-team').style.display="block";
+  /*document.getElementById('team_logo_right').src = logo;*/
+  document.getElementById('team_name_right').textContent = team2Name;
+  document.getElementById('left-team').style.display="block";
+  document.getElementById('right-team').style.display="block";
+  insertLeft(team1Name);
+  insertRight(team2Name);
 }
+
+
 
  function select_team(team){
      team.style.border = "2px solid #6E509F";
@@ -301,6 +359,8 @@ if(document.getElementById('selectedBool').textContent === "true"){
        document.getElementById('team_logo_left').src = logo;
        document.getElementById('team_name_left').textContent = teamName;
        document.getElementById('left-team').style.display="block";
+       insertLeft(teamName);
+       
      }else{
        var select_team2_text = document.getElementById('select_team2_text');
        select_team2_text.style.display = "none";
@@ -311,6 +371,7 @@ if(document.getElementById('selectedBool').textContent === "true"){
        document.getElementById('team_logo_right').src = logo;
        document.getElementById('team_name_right').textContent = teamName;
        document.getElementById('right-team').style.display="block";
+       insertRight(teamName);
      }
 
 
@@ -322,3 +383,5 @@ if(document.getElementById('selectedBool').textContent === "true"){
  </body>
 
 </html>
+
+
